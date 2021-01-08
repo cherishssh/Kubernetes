@@ -99,8 +99,8 @@ sealos init --passwd '123456' \
 ```
 [root@master1 ~]# kubectl get nodes
 NAME      STATUS   ROLES    AGE     VERSION
-master1   Ready    master   1m   v1.19.0
-worker1   Ready    <none>   1m   v1.19.0
+master1   Ready    master   1m   v1.20.0
+worker1   Ready    <none>   1m   v1.20.0
 [root@master1 ~]# 
 ```
 使用`kkubectl get pod -n kube-system` 检查POD状态
