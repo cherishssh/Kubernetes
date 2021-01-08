@@ -76,7 +76,10 @@ Kubernetes是Google开源的一个容器编排引擎，它支持自动化部署�
 
 #### 下载Kubenetes离线包
 ##### 下载离线kube包
-`下载PACKAGE中 kube1.19.0.tar.gz 离线包至Master节点/root/目录下`
+`下载kube1.20.0.tar.gz 离线包至Master节点/root/目录下`
+```
+wget -c https://sealyun.oss-cn-beijing.aliyuncs.com/2fb10b1396f8c6674355fcc14a8cda7c-v1.20.0/kube1.20.0.tar.gz
+```
 
 ##### 下载二进制工具
 `下载PACKAGE中sealos离线包至Master节点/root/目录下, sealos是个golang的二进制工具`
@@ -90,8 +93,8 @@ Master1节点上执行;`(PS: 123456 为worker1的root密码,根据实际情况�
 sealos init --passwd '123456' \
 --master 10.1.1.21 \ 
 --node 10.1.1.22 \
---pkg-url /root/kube1.19.0.tar.gz \
---version v1.19.0
+--pkg-url /root/kube1.20.0.tar.gz \
+--version v1.20.0
 ```
 使用`kubectl get nodes` 检查节点状态
 ```
