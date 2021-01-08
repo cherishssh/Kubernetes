@@ -91,7 +91,7 @@ kube-proxy-brw64                           1/1     Running   0          1m
 kube-scheduler-node21                      1/1     Running   0          1m
 kube-sealyun-lvscare-node22                1/1     Running   0          1m
 [root@node21 ~]# 
-
+```
 
 
 
