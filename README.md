@@ -87,7 +87,7 @@ worker1   Ready    <none>   1m   v1.19.0
 ```
 使用`kkubectl get pod -n kube-system` 检查POD状态
 ```
-[root@node21 ~]# kubectl get pod -n kube-system
+[root@master1 ~]# kubectl get pod -n kube-system
 NAME                                       READY   STATUS    RESTARTS   AGE
 calico-kube-controllers-69b47f4dfb-66hph   1/1     Running   0          1m
 calico-node-cc5tp                          1/1     Running   0          1m
@@ -101,9 +101,11 @@ kube-proxy-b892h                           1/1     Running   0          1m
 kube-proxy-brw64                           1/1     Running   0          1m
 kube-scheduler-node21                      1/1     Running   0          1m
 kube-sealyun-lvscare-node22                1/1     Running   0          1m
-[root@node21 ~]# 
+[root@master1 ~]# 
 ```
 
+
+<H1><Center>*****作者正在努力更新 Kubernetes-Dashboard UI界面***** </Center></H1>
 
 
 <H2><Center>打赏作者喝杯咖啡</Center></H2>
