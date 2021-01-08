@@ -11,6 +11,7 @@
         - [下载离线kube包](#%E4%B8%8B%E8%BD%BD%E7%A6%BB%E7%BA%BFkube%E5%8C%85)
         - [下载二进制工具](#%E4%B8%8B%E8%BD%BD%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%B7%A5%E5%85%B7)
     - [安装kubernetes集群](#%E5%AE%89%E8%A3%85kubernetes%E9%9B%86%E7%BE%A4)
+- [`至此Kubernetes安装完成!!`](#%E8%87%B3%E6%AD%A4kubernetes%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90)
 
 <!-- /MarkdownTOC -->
 
@@ -21,7 +22,6 @@
 # Email:  cherishaohua@foxmail.com
 # Adress: ShangHai/China
 # Last Modified by:   SunShaoHua
-# Last Modified time: 2021-01-08 13:58:33
 ```
 
 ### 了解Kubernetes
@@ -104,6 +104,8 @@ kube-sealyun-lvscare-node22                1/1     Running   0          1m
 [root@master1 ~]# 
 ```
 
+`至此Kubernetes安装完成!!`
+----
 
 <H1><Center>*****作者正在努力更新 Kubernetes-Dashboard UI界面***** </Center></H1>
 
