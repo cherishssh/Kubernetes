@@ -107,7 +107,7 @@ kube-sealyun-lvscare-node22                1/1     Running   0          1m
 `至此Kubernetes安装完成!!`
 ----
 
-<H1><Center>*****作者正在努力更新 Kubernetes-Dashboard UI界面***** </Center></H1>
+<H1><Center>*作者正在努力更新 Kubernetes-Dashboard UI界面* </Center></H1>
 
 
 <H2><Center>打赏作者喝杯咖啡</Center></H2>
