@@ -29,14 +29,15 @@
 ### 实验环境
 #### 此次 试验环境
 双网卡作用:`内网王卡 用作访问K8s Web页面`,`公网网卡 用作下载安装部署`,单节点Master安装
-| 主机名称 | 操作系统 | 网络环境 |
-|----------|----------|----------|
-| master1  | CentOS7  | 双网卡   |
-
+| 主机名称 | 操作系统 | 网络环境 | CPU | 内存 |
+|----------|----------|----------|-----|------|
+| master1  | CentOS7  | 双网卡   | 2C  | 4G   |
 
 ### 初始化master 节点
 以下只在 master 节点执行:
 ```
+# 确认主机能够访问外网后,执行下列指令
+
 # 阿里云 docker hub 镜像
 export REGISTRY_MIRROR=https://registry.cn-hangzhou.aliyuncs.com
 curl -sSL https://kuboard.cn/install-script/v1.20.x/install_kubelet.sh | sh -s 1.20.1
@@ -64,6 +65,5 @@ watch kubectl get pod -n kube-system -o wide
 # 查看 master 节点初始化结果
 kubectl get nodes -o wide
 ```
-
 
 
