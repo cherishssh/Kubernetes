@@ -27,6 +27,9 @@
         - [下载离线kube包](#%E4%B8%8B%E8%BD%BD%E7%A6%BB%E7%BA%BFkube%E5%8C%85)
         - [下载二进制工具](#%E4%B8%8B%E8%BD%BD%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%B7%A5%E5%85%B7)
     - [安装kubernetes集群](#%E5%AE%89%E8%A3%85kubernetes%E9%9B%86%E7%BE%A4)
+- [安装Kubernetes-Dashboard](#%E5%AE%89%E8%A3%85kubernetes-dashboard)
+    - [Kubernetes-Dashboard访问](#kubernetes-dashboard%E8%AE%BF%E9%97%AE)
+    - [获取token](#%E8%8E%B7%E5%8F%96token)
 
 <!-- /MarkdownTOC -->
 
@@ -124,6 +127,23 @@ kube-sealyun-lvscare-node22                1/1     Running   0          1m
 
 至此Kubernetes安装完成!!
 
+### 安装Kubernetes-Dashboard
+
+```
+sealos install --pkg-url https://github.com/sealstore/dashboard/releases/download/v2.0.0-bata5/dashboard.tar
+```
+
+#### Kubernetes-Dashboard访问
+使用上述命令安装完dashboard后日志中会输出token，登录页面时需要使用.
+
+https://你的master地址:32000 chrome访问不了就用火狐
+
+
+#### 获取token
+使用此命令获取token
+```
+kubectl get secret -nkubernetes-dashboard \    $(kubectl get secret -n kubernetes-dashboard|grep dashboard-token |awk '{print $1}') \    -o jsonpath='{.data.token}'  | base64 --decode
+```
 <!-- ### Kubernetes-Dashboard UI -->
 
 <!-- <H1><Center>*作者正在努力更新 Kubernetes-Dashboard UI界面* </Center></H1> -->
