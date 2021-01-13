@@ -7,8 +7,11 @@
     - [软件要求](#%E8%BD%AF%E4%BB%B6%E8%A6%81%E6%B1%82)
 - [实验环境](#%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83)
     - [此次 试验环境](#%E6%AD%A4%E6%AC%A1-%E8%AF%95%E9%AA%8C%E7%8E%AF%E5%A2%83)
-- [初始化master 节点](#%E5%88%9D%E5%A7%8B%E5%8C%96master-%E8%8A%82%E7%82%B9)
+- [安装 Kubernetes](#%E5%AE%89%E8%A3%85-kubernetes)
     - [检查 master 初始化结果](#%E6%A3%80%E6%9F%A5-master-%E5%88%9D%E5%A7%8B%E5%8C%96%E7%BB%93%E6%9E%9C)
+- [安装 Kubernetes-Dashboard](#%E5%AE%89%E8%A3%85-kubernetes-dashboard)
+    - [Kubernetes-Dashboard访问](#kubernetes-dashboard%E8%AE%BF%E9%97%AE)
+    - [获取token](#%E8%8E%B7%E5%8F%96token)
 
 <!-- /MarkdownTOC -->
 
@@ -33,7 +36,7 @@
 |----------|----------|----------|-----|------|
 | master1  | CentOS7  | 双网卡   | 2C  | 4G   |
 
-### 初始化master 节点
+### 安装 Kubernetes
 以下只在 master 节点执行:
 ```
 # 确认主机能够访问外网后,执行下列指令
@@ -66,4 +69,21 @@ watch kubectl get pod -n kube-system -o wide
 kubectl get nodes -o wide
 ```
 
+### 安装 Kubernetes-Dashboard
+
+```
+sealos install --pkg-url https://github.com/sealstore/dashboard/releases/download/v2.0.0-bata5/dashboard.tar
+```
+
+#### Kubernetes-Dashboard访问
+使用上述命令安装完dashboard后日志中会输出token，登录页面时需要使用.
+
+https://你的master地址:32000 chrome访问不了就用火狐
+
+
+#### 获取token
+使用此命令获取token
+```
+kubectl get secret -nkubernetes-dashboard \    $(kubectl get secret -n kubernetes-dashboard|grep dashboard-token |awk '{print $1}') \    -o jsonpath='{.data.token}'  | base64 --decode
+```
 
